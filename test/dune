@@ -42,3 +42,9 @@
  (deps implemented_externals.txt zarith_externals.txt)
  (action
   (bash "diff %{deps}")))
+
+(env
+  (_
+    (wasm_of_ocaml
+      (enabled_if true)
+      (runtest_alias runtest-wasm))))
